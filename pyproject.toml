@@ -1,0 +1,26 @@
+[project]
+name = "niicat"
+version = "0.5.0"
+description = "Preview NIfTI images on the terminal"
+readme = "Readme.md"
+requires-python = ">=3.7"
+license = { text = "GPL-2.0" }
+authors = [{ name = "Jakob Wasserthal", email = "j.wasserthal@dkfz.de" }]
+dependencies = [
+  "nibabel>=2.3.0",
+  "matplotlib",
+  "numpy",
+  'importlib-metadata; python_version < "3.8"',
+]
+
+[project.optional-dependencies]
+libsixel = ["libsixel-python"]
+
+[project.urls]
+Homepage = "https://github.com/MIC-DKFZ/niicat/"
+
+[project.scripts]
+niicat = "niicat.cli:main"
+
+[tool.uv]
+package = true
